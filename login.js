@@ -124,7 +124,7 @@ function handleSubmit() {
         password: password
     }
 
-    fetch('http://kevinwan.pythonanywhere.com/send-login', {
+    fetch('https://kevinwan.pythonanywhere.com/send-login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
