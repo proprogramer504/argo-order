@@ -22,7 +22,7 @@ function initLogin() {
     submitButton.addEventListener('click', handleSubmit);
     submitDiv.appendChild(submitButton)
 
-    let loginList = querySelector("#loginList")
+    let loginList = document.querySelector("#loginList")
     loginList.appendChild(usernameDiv);
     loginList.appendChild(passwordDiv);
     loginList.appendChild(submitDiv);
