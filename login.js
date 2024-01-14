@@ -1,24 +1,33 @@
 let loginDiv = document.querySelector("#login")
 
 function initLogin() {
+    let usernameDiv = document.querySelector("#username")
     let usernameInput = document.createElement('input');
     usernameInput.classList.add('username');
     usernameInput.setAttribute('type', 'text');
     usernameInput.setAttribute('placeholder', 'Username');
+    usernameDiv.appendChild(usernameInput)
 
+    let passwordDiv = document.querySelector("#password")
     let passwordInput = document.createElement('input');
     passwordInput.classList.add('password');
     passwordInput.setAttribute('type', 'password');
     passwordInput.setAttribute('placeholder', 'Password');
+    passwordDiv.appendChild(passwordInput)
 
+    let submitDiv = document.querySelector("#submit")
     let submitButton = document.createElement('button');
     submitButton.classList.add('submit');
     submitButton.textContent = 'Submit';
     submitButton.addEventListener('click', handleSubmit);
+    submitDiv.appendChild(submitButton)
 
-    loginDiv.appendChild(usernameInput);
-    loginDiv.appendChild(passwordInput);
-    loginDiv.appendChild(submitButton);
+    let loginList = querySelector("#loginList")
+    loginList.appendChild(usernameDiv);
+    loginList.appendChild(passwordDiv);
+    loginList.appendChild(submitDiv);
+
+    loginDiv.appendChild(loginList)
 }
 initLogin()
 
@@ -102,12 +111,22 @@ function checkOrders() {
     document.body.appendChild(newDiv)
 
     loginDiv.style.display = 'none';
-    
+
     const checkingOrder = setInterval(async () => {
         let orderData = await fetchOrders()
-        console.log(orderData.length)
+        console.log(orderData)
+
         if (orderData.length > 0) {
             console.log("clear")
+            
+            orderData.forEach( (item) => {
+                let formattedItem = item.replace(/\n/g, "<br>");
+                let NewWindow = window.open()
+                NewWindow.document.write(formattedItem)
+                NewWindow.print()
+                NewWindow.close()
+            })
+
             clearOrders()
         } else {
             console.log("no data")

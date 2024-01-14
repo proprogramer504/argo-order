@@ -33,7 +33,11 @@ def get_order_items(data):
 
 
 def finalize_order(user_id, table_number, orders):
-    formatted_order = f'ARGO \nServer ID: {user_id} \nTable Number: {table_number}\n\n'
+    if table_number > 10:
+        formatted_order = f'ARGO \nServer ID: {user_id} \n Bar: {table_number - 9}\n\n'
+    else:
+        formatted_order = f'ARGO \nServer ID: {user_id} \nTable Number: {table_number}\n\n'
+    
     for i, item in enumerate(orders, start=1):
         formatted_order += f'{item}\n'
 

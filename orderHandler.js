@@ -321,14 +321,6 @@ const products = [
     },
     {
         id:19,
-        name:"Daily Omelette",
-        price:NaN,
-        mods:{
-
-        }
-    },
-    {
-        id:20,
         name:"Fried Chicken n' Waffles",
         price:21,
         mods:{
@@ -370,14 +362,23 @@ function formatData (id, tableNumber, itemName, price, mods) {
 }
 
 function initApp () {
-    [...Array(10).keys()].forEach( (item) => {
+    for(let item = 0; item < 10; item++) {
         let newDiv = document.createElement('div')
 
         newDiv.classList.add('table')
         newDiv.innerHTML = `
             <button onclick="clickedTable(${item + 1})">Table ${item + 1}</button>`
         tableList.appendChild(newDiv)
-    })
+    }
+
+    for(let item = 10; item < 19; item++) {
+        let newDiv = document.createElement('div')
+
+        newDiv.classList.add('table')
+        newDiv.innerHTML = `
+            <button onclick="clickedTable(${item + 1})">Bar ${item - 9}</button>`
+        tableList.appendChild(newDiv)
+    }
 
     products.forEach( (value, key) => {
         let newDiv = document.createElement('div')
@@ -393,7 +394,7 @@ function initApp () {
         
     newDiv.classList.add('done')
     newDiv.innerHTML = `
-        <button onclick="clickedFinalDone()">Done</button>`
+        <button onclick="clickedFinalDone()">Print</button>`
     foodList.appendChild(newDiv)
 }
 initApp()
@@ -412,10 +413,17 @@ function createMods(mods) {
         }
     }
 
+    let typeMod = document.createElement('div')
+    typeMod.classList.add("typeMod")
+    typeMod.innerHTML = `
+    <input class="typedMods" placeholder="Type Mods">`
+
+    modList.append(typeMod)
+
     let newDiv = document.createElement('div')
     newDiv.classList.add('done')
     newDiv.innerHTML = `
-        <button onclick="clickedDoneMod()">Done</button>`
+        <button onclick="clickedDoneMod()">Add</button>`
     
     modList.appendChild(newDiv)
 }
@@ -439,6 +447,13 @@ function clickedFood (key) {
 }
 
 function clickedDoneMod () {
+    let typedMods = document.querySelectorAll(".typedMods")
+    typedMods.forEach ( (element) => {
+        if (element.value != "") {
+            mods.push(element.value)
+        }
+    })
+
     let data = formatData(document.querySelector(".username").value, tableNumber, 
         products[finalKey].name, currPrice, mods)
     foodOrder.push(data)
