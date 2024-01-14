@@ -121,10 +121,9 @@ function checkOrders() {
             
             orderData.forEach( (item) => {
                 let formattedItem = item.replace(/\n/g, "<br>");
-                let NewWindow = window.open()
-                NewWindow.document.write(formattedItem)
-                NewWindow.print()
-                NewWindow.close()
+                document.write(formattedItem)
+                window.print()
+                document.write("")
             })
 
             clearOrders()
