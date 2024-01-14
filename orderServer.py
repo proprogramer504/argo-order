@@ -35,7 +35,7 @@ def get_order_items(data):
 def finalize_order(user_id, table_number, orders):
     if table_number == 0:
         formatted_order = f'ARGO \nServer ID: {user_id} \n TOGO Order\n\n'
-    if table_number > 10:
+    elif table_number > 10:
         formatted_order = f'ARGO \nServer ID: {user_id} \n Bar: {table_number - 9}\n\n'
     else:
         formatted_order = f'ARGO \nServer ID: {user_id} \nTable Number: {table_number}\n\n'

@@ -472,7 +472,7 @@ function clickedDoneMod () {
 }
 
 function clickedFinalDone() {
-    fetch('https://kevinwan.pythonanywhere.com/send-orders', {
+    fetch('http://127.0.0.1:5000/send-orders', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
