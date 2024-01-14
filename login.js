@@ -71,7 +71,7 @@ function createServerUI() {
 
 async function fetchOrders() {
     try {
-        const response = await fetch("http://127.0.0.1:5000/get-orders");
+        const response = await fetch("https://kevinwan.pythonanywhere.com/get-orders");
 
         if (!response.ok) {
             throw new Error(`Error HTTP Status: ${response.status}`);
@@ -85,7 +85,7 @@ async function fetchOrders() {
 }
 
 function clearOrders() {
-    fetch("http://127.0.0.1:5000/clear-orders")
+    fetch("https://kevinwan.pythonanywhere.com/clear-orders")
     .then(response => {
         if (!response.ok) {
             throw new Error(`Error HTTP Status: ${response.status}`)
@@ -142,7 +142,7 @@ function handleSubmit() {
         password: password
     }
 
-    fetch('http://127.0.0.1:5000/send-login', {
+    fetch('https://kevinwan.pythonanywhere.com/send-login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

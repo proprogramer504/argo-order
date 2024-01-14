@@ -367,7 +367,7 @@ function initApp () {
     toGo.classList.add('toGo')
     toGo.innerHTML = `
         <button onclick="clickedTable(${0})">To Go</button>`
-    tableList.appendChild(toGo)
+        tableList.appendChild(toGo)
 
     for(let item = 0; item < 10; item++) {
         let newDiv = document.createElement('div')
@@ -472,7 +472,7 @@ function clickedDoneMod () {
 }
 
 function clickedFinalDone() {
-    fetch('http://127.0.0.1:5000/send-orders', {
+    fetch('https://kevinwan.pythonanywhere.com/send-orders', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
