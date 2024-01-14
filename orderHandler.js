@@ -355,13 +355,20 @@ function formatData (id, tableNumber, itemName, price, mods) {
         tableNumber: tableNumber,
         name: itemName,
         price: price,
-        mods: mods
+        mods: mods,
     }
 
     return dta
 }
 
 function initApp () {
+    let toGo = document.createElement('div')
+        
+    toGo.classList.add('toGo')
+    toGo.innerHTML = `
+        <button onclick="clickedTable(${0})">To Go</button>`
+    tableList.appendChild(toGo)
+
     for(let item = 0; item < 10; item++) {
         let newDiv = document.createElement('div')
 
@@ -480,3 +487,4 @@ function clickedFinalDone() {
     foodOrder = [];
     enableTableDisableFood();
 }
+
