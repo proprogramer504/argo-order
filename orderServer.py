@@ -5,8 +5,8 @@ app = Flask(__name__)
 CORS(app)
 
 user_credentials = {
-    "kkkai": "1",
-    "kkkevin": "1",
+    "kai": "1",
+    "kevin": "1",
     "printer": 'password'
 }
 

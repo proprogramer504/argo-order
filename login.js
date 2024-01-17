@@ -121,8 +121,9 @@ function checkOrders() {
             
             orderData.forEach( (item) => {
                 let formattedItem = item.replace(/\n/g, "<br>");
-                document.body.innerHTML = ""
-                document.write(formattedItem)
+                document.body.style.fontSize = "20px"
+                document.body.style.width = "80mm"
+                document.body.innerHTML = formattedItem
                 window.print()
             })
 
