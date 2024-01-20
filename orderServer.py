@@ -5,10 +5,17 @@ app = Flask(__name__)
 CORS(app)
 
 user_credentials = {
-    "kai": "1",
-    "kevin": "1",
+    "kai": "K7d",
+    "kevin": "K4s",
+    "taylor": "T6h",
+    "doug": "D9g",
+    "athena": "A3j",
+    "sherri": "S5a",
+    "lynda": "L1s",
+    "liam": "L2c",
     "printer": 'password'
 }
+
 
 current_orders = []
 

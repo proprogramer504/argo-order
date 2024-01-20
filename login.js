@@ -119,13 +119,17 @@ function checkOrders() {
         if (orderData.length > 0) {
             console.log("clear")
             
-            orderData.forEach( (item) => {
+            orderData.forEach((item) => {
                 let formattedItem = item.replace(/\n/g, "<br>");
-                document.body.style.fontSize = "20px"
-                document.body.style.width = "80mm"
-                document.body.innerHTML = formattedItem
-                window.print()
-            })
+                let boldFormattedItem = `<strong>${formattedItem}</strong>`;
+                
+                document.body.style.fontSize = "23px";
+                document.body.style.width = "80mm";
+                document.body.innerHTML = boldFormattedItem;
+                
+                window.print();
+            });
+            
 
             clearOrders()
         } else {
