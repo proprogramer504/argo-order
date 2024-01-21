@@ -123,7 +123,7 @@ function checkOrders() {
                 let formattedItem = item.replace(/\n/g, "<br>");
                 let boldFormattedItem = `<strong>${formattedItem}</strong>`;
                 
-                document.body.style.fontSize = "23px";
+                document.body.style.fontSize = "27px";
                 document.body.style.width = "80mm";
                 document.body.innerHTML = boldFormattedItem;
                 
