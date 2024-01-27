@@ -650,7 +650,10 @@ const products = [
             },
             third: {
                 modClass: "Sauce",
-                name: "Extra Mush Sauce"
+                mod1: {
+                    name:"Extra Mush Sauce",
+                    price: 0
+                }
             }
         }
     },
