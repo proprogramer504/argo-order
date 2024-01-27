@@ -981,8 +981,13 @@ function createMods(mods) {
             }
         }
         if (currentMod == maxMods) {
-            let textMod = document.createElement("div");
-            // do this next
+            let typeMod = document.createElement('div')
+            typeMod.classList.add("typeMod")
+            typeMod.innerHTML = `
+            <input class="typedMods" placeholder="Type Mods">`
+
+            modDiv.append(typeMod)
+            
             let newDiv = document.createElement("div");
             newDiv.classList.add('finalDone');
             newDiv.innerHTML = `
@@ -1034,7 +1039,6 @@ function clickedType (type) {
            })
         })
         let newDiv = document.createElement('div')
-        
         newDiv.classList.add('done')
         newDiv.innerHTML = `
             <button onclick="clickedFinalDone()">Print</button>`
@@ -1058,16 +1062,24 @@ function clickedPartialDone(current, next) {
     nextSlide.style.display = ''
 }
 
-function clickedDoneMod () {
+function clickedDoneMod() {
+    let typedMods = document.querySelectorAll(".typedMods")
+    typedMods.forEach ( (element) => {
+        if (element.value != "") {
+            mods.push(element.value)
+        }
+    })
+
     let data = formatData(document.querySelector(".username").value, tableNumber, 
-        products[finalKey].name, currPrice, mods)
-    foodOrder.push(data)
-    
-    mods = []
-    finalKey = undefined
-    currPrice = 0
-    enableFoodDisableMods()
+        products[finalKey].name, currPrice, mods);
+    foodOrder.push(data);
+
+    mods = [];
+    finalKey = undefined;
+    currPrice = 0;
+    enableFoodDisableMods();
 }
+
 
 function clickedTable (tblNumber) {
     tableNumber = tblNumber

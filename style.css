@@ -1,8 +1,3 @@
-body {
-  background-color: #ceeb4c;
-  margin: 0;
-}
-
 #login,
 #order {
   display: flex;
@@ -12,39 +7,73 @@ body {
   min-height: 100vh;
 }
 
+body {
+  background-color: #ceeb4c;
+}
+
 #login li {
-  list-style-type: none;
+list-style-type: none;
 }
 
 #login input,
-#login button,
-#order input,
-#order button {
-  margin: 3px;
-  padding: 17px 40px;
-  width: 300px;
-  cursor: pointer;
-  border: 0;
-  background-color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.1s ease;
+#login button {
+margin: 3px;
+padding: 17px 40px;
+width: 220px;                     
+cursor: pointer;
+border: 0;
+background-color: white;
+box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+font-size: 15px;
+transition: all 0.10s ease;
 }
 
-#login button,
-#order button {
-  width: 300px;
+#login button {
+width: 300px;
 }
 
-#order button:active,
-#order button:focus {
-  letter-spacing: 3px;
-  background-color: #ee1ed5;
-  color: hsl(0, 0%, 100%);
-  box-shadow: 0 0 0 rgba(255, 93, 236, 0);
-  transition: 10ms;
+#order{
+display: flex;
+align-items: center;
+min-height: 100vh;
+}
+
+#order button {
+margin: 2px 0;
+padding: 17px 40px;
+width: 300px;
+cursor: pointer;
+border: 0;
+background-color: white;
+box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+font-size: 15px;
+transition: all 0.10s ease;
+}
+
+#order input {
+margin: 2px 0;
+padding: 17px 40px;
+width: 220px;                     
+cursor: pointer;
+border: 0;
+background-color: white;
+box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+font-size: 15px;
+transition: all 0.10s ease;
+}
+
+#order button:active {
+letter-spacing: 3px;
+background-color: #ee1ed5;
+color: hsl(0, 0%, 100%);
+box-shadow: #ff5dec 0px 0px 0px 0px;
+transition: 10ms;
 }
 
 ul {
