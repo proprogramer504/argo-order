@@ -2,8 +2,10 @@ let order = document.querySelector("#order")
 let tableSelector = document.querySelector("#tableSelector")
 let foodSelector = document.querySelector("#foodSelector")
 let modSelector = document.querySelector("#modSelector")
+let typeSelector = document.querySelector("#typeSelector")
 
 let tableList = tableSelector.querySelector('#tableList')
+let typeList = typeSelector.querySelector('#typeList')
 let foodList = foodSelector.querySelector('#foodList')
 let modList = modSelector.querySelector("#modList")
 
@@ -13,46 +15,70 @@ let currPrice = 0
 let foodOrder = []
 let mods = []
 
+// inside type 1 is breakfast 2 is brunch 3 is lunch
 const products = [
     {
         id:1,
         name:"Basic Breakfast",
         price:15,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Bacon",
-                price: 0
+            first: {
+                modClass: "Meats",
+                mod1: {
+                    name: "Bacon",
+                    price: 0
+                },
+                mod2: {
+                    name: "Ham",
+                    price: 0
+                }
             },
-            mod2: {
-                name: "Ham",
-                price: 0
-            },
-            mod3: {
-                name: "Home Fries",
-                price: 0
-            },
-            mod4: {
-                name: "White Bread",
-                price: 0
-            },
-            mod5: {
-                name: "Brown Bread",
-                price: 0
+            second: {
+                modClass: "Fries and Bread",
+                mod1: {
+                    name: "Home Fries",
+                    price: 0
+                },
+                mod2: {
+                    name: "White Bread",
+                    price: 0
+                },
+                mod3: {
+                    name: "Brown Bread",
+                    price: 0
+                }
             }
         }
     },
     {
         id:2,
-        name:"Platter",
-        price:19,
+        name:"Argo Burger",
+        price:17,
+        type: [2, 3],
         mods:{
-            mod1: {
-                name: "Cake Platter",
-                price: 0
-            },
-            mod2: {
-                name: "French Platter",
-                price: 0
+            first: {
+                modClass: "Sides",
+                mod1: {
+                    name: "Fries",
+                    price: 0
+                },
+                mod2: {
+                    name: "Mashed Potatoes",
+                    price: 0
+                },
+                mod3: {
+                    name: "NO Side",
+                    price: -3
+                },
+                mod4: {
+                    name: "Salad",
+                    price: 2
+                },
+                mod5: {
+                    name: "Side Veggies",
+                    price: 0
+                }
             }
         }
     },
@@ -60,277 +86,799 @@ const products = [
         id:3,
         name:"Breakfast Club",
         price:17,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "White Toast",
-                price: 0
-            },
-            mod2: {
-                name: "Brown Toast",
-                price: 0
-            },
-            mod3: {
-                name: "Home Fries",
-                price: 0
-            },
-            mod4: {
-                name: "Fries",
-                price: 0
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
             }
         }
     },
     {
         id:4,
-        name:"Con Queso Eggs",
-        price:17,
+        name:"Daily Omelette",
+        price:19,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
+            }
         }
     },
     {
         id:5,
-        name:"Buttermilk Pancakes",
-        price:16,
+        name:"Cakes Platter",
+        price:19,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Basted",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Meat",
+                mod1: {
+                    name: "Avocado",
+                    price: 0
+                },
+                mod2: {
+                    name: "Bacon",
+                    price: 0
+                },
+                mod2: {
+                    name: "Grilled Tomato",
+                    price: 0
+                },
+                mod3: {
+                    name: "Ham",
+                    price: 0
+                },
+                mod4: {
+                    name: "Sausage",
+                    price: 0
+                },
+                mod5: {
+                    name: "Sliced Tomato",
+                    price: 0
+                }
+            },
+            third: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
+            },
+            fourth: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sub SALAD",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub FRIES",
+                    price: 0
+                }
+            }
         }
     },
     {
         id:6,
-        name:"French Toast",
-        price:17,
+        name:"Pancakes",
+        price:16,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "NO Fruit",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Butter",
+                    price: 0
+                }
+            }
         }
     },
     {
         id:7,
-        name:"Steak n' Eggs",
-        price:24,
+        name:"French Platter",
+        price:19,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Over Easy Eggs",
-                price: 0
+            first: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Basted",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
             },
-            mod2: {
-                name: "Over Medium Eggs",
-                price: 0
+            second: {
+                modClass: "Meat",
+                mod1: {
+                    name: "Avocado",
+                    price: 0
+                },
+                mod2: {
+                    name: "Bacon",
+                    price: 0
+                },
+                mod3: {
+                    name: "Grilled Tomato",
+                    price: 0
+                },
+                mod4: {
+                    name: "Ham",
+                    price: 0
+                },
+                mod5: {
+                    name: "Sausage",
+                    price: 0
+                },
+                mod6: {
+                    name: "Sliced Tomato",
+                    price: 0
+                }
             },
-            mod3: {
-                name: "Over Hard Eggs",
-                price: 0
+            third: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
             },
-            mod4: {
-                name: "Sunny Side Up Eggs",
-                price: 0
-            },
-            mod5: {
-                name: "Blue Rare",
-                price: 0
-            },
-            mod6: {
-                name: "Rare",
-                price: 0
-            },
-            mod7: {
-                name: "Medium Rare",
-                price: 0
-            },
-            mod8: {
-                name: "Medium",
-                price: 0
-            },
-            mod9: {
-                name: "Medium Well",
-                price: 0
-            },
-            mod10: {
-                name: "Well Done",
-                price: 0
-            },
-            mod11: {
-                name: "White Toast",
-                price: 0
-            },
-            mod12: {
-                name: "Brown Toast",
-                price: 0
+            fourth: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sub SALAD",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub FRIES",
+                    price: 0
+                }
             }
         }
     },
     {
         id:8,
-        name:"House Chow Mein",
-        price:21,
+        name:"French Toast",
+        price:13,
+        type: [1, 2],
         mods:{
-            
-        }
-    },
-    {
-        id:9,
-        name:"Chicken Chili Con Queso",
-        price:21,
-        mods:{
-            mod1: {
-                name: "Rice",
-                price: 0
-            },
-            mod2: {
-                name: "Fries",
-                price: 0
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "NO Fruit",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Butter",
+                    price: 0
+                }
             }
         }
     },
     {
-        id:10,
-        name:"Spicy Lamb",
-        price:21,
+        id:9,
+        name:"Waffles",
+        price:16,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "NO Fruit",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Butter",
+                    price: 0
+                }
+            }
         }
     },
     {
         id:11,
-        name:"Coconut Curry Chicken Stir Fry",
-        price:19,
+        name:"Con Queso Eggs",
+        price:17,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Tofu (makes it vegan)",
-                price: 0
+            first: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod4: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod7: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled Hard",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sub Sauce",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub Bacon",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub Ham",
+                    price: 0
+                }
+            },
+            third: {
+                modClass: "Sauce",
+                mod1: {
+                    name: "Sauce on Side",
+                    price: 0
+                },
+                mod2: {
+                    name: "No Sauce",
+                    price: 0
+                }
             }
         }
     },
     {
         id:12,
-        name:"Spaghetti Meat Sauce",
-        price:18,
+        name:"Brunch Omelette",
+        price:23,
+        type: [1, 2],
         mods:{
-
-        }
-    },
-    {
-        id:13,
-        name:"Argo Burger",
-        price:17,
-        mods:{
-            mod1: {
-                name: "Home Fries",
-                price: 0
-            },
-            mod2: {
-                name: "Fries",
-                price: 0
-            },
-            mod3: {
-                name: "Salad",
-                price: 2
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
             }
         }
     },
     {
-        id:14,
-        name:"Turkey Club",
-        price:17,
+        id:13,
+        name:"Eggs Benedict",
+        price:16,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Fries",
-                price: 0
+            first: {
+                modClass: "Sauce",
+                mod1: {
+                    name: "Hollandaise ON SIDE",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Hollandaise",
+                    price: 0
+                }
             },
-            mod2: {
-                name: "White",
-                price: 0
+            second: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Scrambled Hard",
+                    price: 0
+                },
+                mod10: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
             },
-            mod3: {
-                name: "Brown",
-                price: 0
-            },
-            mod4: {
-                name: "Salad",
-                price: 2
+        }
+    },
+    {
+        id:14,
+        name:"Chicken and Waffles",
+        price:22,
+        type: [1, 2],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sub SALAD",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub FRIES",
+                    price: 0
+                }
             }
         }
     },
     {
         id:15,
-        name:"Grilled Cheese Tomato Bacon Sandwich",
-        price:17,
+        name:"Meat Loaf",
+        price:21,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Fries",
-                price: 0
-            },
-            mod2: {
-                name: "White",
-                price: 0
-            },
-            mod3: {
-                name: "Brown",
-                price: 0
-            },
-            mod4: {
-                name: "Salad",
-                price: 2
+            first: {
+                modClass: "Without",
+                mod1: {
+                    name: "NO Tomato Sauce",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Homefries",
+                    price: 0
+                },
+                mod3: {
+                    name: "NO Salad",
+                    price: 0
+                }
             }
         }
     },
     {
         id:16,
-        name:"Eggs Benedict",
-        price:17    ,
+        name:"Pancakes and Duck Confit",
+        price:23,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Soft",
-                price: 0
-            },
-            mod2: {
-                name: "Medium",
-                price: 0
-            },
-            mod3: {
-                name: "Hard",
-                price: 0
+            first: {
+                modClass: "Without",
+                mod1: {
+                    name: "NO Pancakes",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Duck",
+                    price: 0
+                },
+                mod3: {
+                    name: "NO Fruit",
+                    price: 0
+                },
+                mod4: {
+                    name: "NO Butter",
+                    price: 0
+                },
+                mod5: {
+                    name: "NO Compote",
+                    price: 0
+                }
             }
         }
     },
     {
         id:17,
-        name:"Short Rib Benedict",
-        price:23,
+        name:"Pork",
+        price:22,
+        type: [1, 2],
         mods:{
-            mod1: {
-                name: "Soft",
-                price: 0
+            first: {
+                modClass: "Toast",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
             },
-            mod2: {
-                name: "Medium",
-                price: 0
+            second: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Basted",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
             },
-            mod3: {
-                name: "Hard",
-                price: 0
+            third: {
+                modClass: "Sauce",
+                name: "Extra Mush Sauce"
             }
         }
     },
     {
         id:18,
-        name:"Daily Omelette",
-        price:NaN,
+        name:"Salmon Benedict",
+        price:25,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Egg",
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
+            }
         }
     },
     {
         id:19,
-        name:"Fried Chicken n' Waffles",
-        price:21,
+        name:"Salmon Benedict",
+        price:23,
+        type: [1, 2],
         mods:{
-
+            first: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Basted",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
+            }
         }
-    }
+    },
+    {
+        id:20,
+        name:"Spaghetti BOLO",
+        price:23,
+        type: [1, 2],
+        mods:{
+            first: {
+                modClass: "Without",
+                mod1: {
+                    name: "Garlic Toast",
+                    price: 0
+                },
+                mod2: {
+                    name: "Parmesan Cheese",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id:21,
+        name:"Steak and Eggs",
+        price:24,
+        type: [1, 2],
+        mods:{
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Meat",
+                mod1: {
+                    name: "Blue Rare",
+                    price: 0
+                },
+                mod2: {
+                    name: "Med Rare",
+                    price: 0
+                },
+                mod3: {
+                    name: "Med Well",
+                    price: 0
+                },
+                mod4: {
+                    name: "Medium",
+                    price: 0
+                },
+                mod5: {
+                    name: "Rare",
+                    price: 0
+                },
+                mod6: {
+                    name: "Well Done",
+                    price: 0
+                }
+            },
+            third: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Basted",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
+                    price: 0
+                },
+                mod10: {
+                    name: "Boiled",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id:22,
+        name:"Bacon Lettuce Tomato (BLT)",
+        price:23,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Toast",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Side",
+                mod1: {
+                    name: "Sub Mash",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub Salad",
+                    price: 0
+                }
+            }
+        }
+    },
 ]
 
-function enableFoodDisableTable () {
+function enableTypeDisableTable() {
     tableSelector.style.display = "none"
+    typeSelector.style.display = ""
+}
+
+function enableFoodDisableType() {
+    typeSelector.style.display = "none"
     foodSelector.style.display = ""
 }
 
@@ -342,6 +890,10 @@ function enableTableDisableFood () {
 function enableFoodDisableMods () {
     foodSelector.style.display = ""
     modSelector.style.display = "none"
+
+    while (modList.firstChild) {
+        modList.removeChild(modList.firstChild);
+    }
 }
 
 function enableModsDisableFood () {
@@ -352,7 +904,7 @@ function enableModsDisableFood () {
 function formatData (id, tableNumber, itemName, price, mods) {
     let dta = {
         id: id,
-        tableNumber: tableNumber,
+        tableNumber: Number(tableNumber),
         name: itemName,
         price: price,
         mods: mods,
@@ -387,52 +939,105 @@ function initApp () {
         tableList.appendChild(newDiv)
     }
 
-    products.forEach( (value, key) => {
+    let typeArray = ["Breakfast", "Brunch", "Lunch"]
+    typeArray.forEach ( (value) => {
+        console.log(value)
         let newDiv = document.createElement('div')
         
-        newDiv.classList.add('food')
+        newDiv.classList.add('type')
         newDiv.innerHTML = `
-            <button onclick="clickedFood(${key})">${value.name} $${value.price.toLocaleString()}</button>`
-        foodList.appendChild(newDiv)
-        foodSelector.style.display = "none"
+            <button onclick="clickedType('${value}')">${value}</button>`
+        typeList.appendChild(newDiv)
+        typeSelector.style.display = "none"
     })
-
-    let newDiv = document.createElement('div')
-        
-    newDiv.classList.add('done')
-    newDiv.innerHTML = `
-        <button onclick="clickedFinalDone()">Print</button>`
-    foodList.appendChild(newDiv)
 }
 initApp()
 
+
 function createMods(mods) {
-    modList.innerHTML = ""
-    for (const modKey in mods) {
-        if (mods.hasOwnProperty(modKey)) {
-            const mod = mods[modKey]
-
-            let newDiv = document.createElement('div')
-            newDiv.classList.add('mod')
-            newDiv.innerHTML = `
-                <button onclick="clickedMod('${mod.name}', '${mod.price}')">${mod.name} $${mod.price}</button>`
-            modList.appendChild(newDiv)
+    let maxMods = Object.keys(mods).length - 1
+    let currentMod = 0;
+    console.log(maxMods)
+    for (const modType in mods) {
+        let modDiv = document.createElement("div");
+        modDiv.classList.add(`modContainer${currentMod}`);
+        if (currentMod > 0) {
+            modDiv.style.display = "none"
         }
-    }
-
-    let typeMod = document.createElement('div')
-    typeMod.classList.add("typeMod")
-    typeMod.innerHTML = `
-    <input class="typedMods" placeholder="Type Mods">`
-
-    modList.append(typeMod)
-
-    let newDiv = document.createElement('div')
-    newDiv.classList.add('done')
-    newDiv.innerHTML = `
-        <button onclick="clickedDoneMod()">Add</button>`
+        modList.appendChild(modDiv);
     
-    modList.appendChild(newDiv)
+        for (const mod in mods[modType]) {
+            if (mods[modType][mod] != mods[modType].modClass) {
+                let newDiv = document.createElement("div");
+                newDiv.classList.add('mod');
+                newDiv.innerHTML = `
+                    <button onclick="clickedMod('${mods[modType][mod].name}', ${mods[modType][mod].price})">
+                        ${mods[modType][mod].name} $${mods[modType][mod].price}
+                    </button>`;
+                modDiv.appendChild(newDiv);
+            }
+        }
+        if (currentMod == maxMods) {
+            let textMod = document.createElement("div");
+            // do this next
+            let newDiv = document.createElement("div");
+            newDiv.classList.add('finalDone');
+            newDiv.innerHTML = `
+                <button onclick="clickedDoneMod()">Back to Foods</button>`;
+            modDiv.appendChild(newDiv);
+        } else {
+            let newDiv = document.createElement("div");
+            newDiv.classList.add('partialDone');
+            newDiv.innerHTML = `
+                <button onclick="clickedPartialDone('${currentMod}', ${currentMod+1})">Done</button>`
+            modDiv.appendChild(newDiv);
+        }
+        currentMod += 1;
+    }    
+}
+
+
+function clickedType (type) {
+    const decode = {
+        "Breakfast": 1,
+        "Brunch": 2,
+        "Lunch": 3
+    }
+    let foodArray = []
+    let decoded = decode[type]
+
+    products.forEach( (value, key) => {
+
+        value.type.forEach ((intType) => {
+            if (intType === decoded) {
+
+                foodArray.push([value, key])
+            }
+        })
+    })
+    if (foodArray.length > 0) {
+        foodArray.forEach( (menuData) => {
+           menuData.forEach( (menuItem) => {
+            if (menuItem.name === undefined) {
+                console.log("und")
+            } else {
+                let newDiv = document.createElement("div")
+
+                newDiv.classList.add("food")
+                newDiv.innerHTML = `
+                <button onclick=clickedFood('${menuData[1]}')>${menuItem.name}</button>`
+                foodList.appendChild(newDiv)
+            }
+           })
+        })
+        let newDiv = document.createElement('div')
+        
+        newDiv.classList.add('done')
+        newDiv.innerHTML = `
+            <button onclick="clickedFinalDone()">Print</button>`
+        foodList.appendChild(newDiv)
+        enableFoodDisableType()
+    }
 }
 
 function clickedMod (modSelected, modPrice) {
@@ -441,26 +1046,16 @@ function clickedMod (modSelected, modPrice) {
     currPrice += Number(modPrice)
 }
 
-function clickedTable (tblNumber) {
-    tableNumber = tblNumber
-    enableFoodDisableTable()
-}
+function clickedPartialDone(current, next) {
+    console.log(current, next)
+    let currentSlide = document.querySelector(`.modContainer${current}`)
+    let nextSlide = document.querySelector(`.modContainer${next}`)
 
-function clickedFood (key) {
-    finalKey = key
-    currPrice += Number(products[key].price)
-    createMods(products[key].mods)
-    enableModsDisableFood()
+    currentSlide.style.display = "none"
+    nextSlide.style.display = ''
 }
 
 function clickedDoneMod () {
-    let typedMods = document.querySelectorAll(".typedMods")
-    typedMods.forEach ( (element) => {
-        if (element.value != "") {
-            mods.push(element.value)
-        }
-    })
-
     let data = formatData(document.querySelector(".username").value, tableNumber, 
         products[finalKey].name, currPrice, mods)
     foodOrder.push(data)
@@ -470,6 +1065,20 @@ function clickedDoneMod () {
     currPrice = 0
     enableFoodDisableMods()
 }
+
+function clickedTable (tblNumber) {
+    tableNumber = tblNumber
+    enableTypeDisableTable()
+}
+
+function clickedFood (key) {
+    finalKey = key
+    currPrice += Number(products[key].price)
+    createMods(products[key].mods)
+    enableModsDisableFood()
+}
+
+
 
 function clickedFinalDone() {
     fetch('https://kevinwan.pythonanywhere.com/send-orders', {
@@ -485,6 +1094,9 @@ function clickedFinalDone() {
     .catch(error => console.log("ERROR"));
 
     foodOrder = [];
+    while (foodList.firstChild) {
+        foodList.removeChild(foodList.firstChild);
+    }
     enableTableDisableFood();
 }
 

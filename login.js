@@ -42,6 +42,13 @@ function createServerUI() {
     tableListUl.id = 'tableList';
     tableSelectorDiv.appendChild(tableListUl);
 
+    const typeSelectorDiv = document.createElement('div');
+    typeSelectorDiv.id = 'typeSelector';
+
+    const typeListUI = document.createElement('ul');
+    typeListUI.id = 'typeList';
+    typeSelectorDiv.appendChild(typeListUI);
+
     const foodSelectorDiv = document.createElement('div');
     foodSelectorDiv.id = 'foodSelector';
 
@@ -59,6 +66,7 @@ function createServerUI() {
     orderDiv.appendChild(tableSelectorDiv);
     orderDiv.appendChild(foodSelectorDiv);
     orderDiv.appendChild(modSelectorDiv);
+    orderDiv.appendChild(typeSelectorDiv);
 
     document.body.appendChild(orderDiv);
 
@@ -123,8 +131,8 @@ function checkOrders() {
                 let formattedItem = item.replace(/\n/g, "<br>");
                 let boldFormattedItem = `<strong>${formattedItem}</strong>`;
                 
-                document.body.style.fontSize = "27px";
-                document.body.style.width = "80mm";
+                document.body.style.fontSize = "29px";
+                document.body.style.width = "88mm";
                 document.body.innerHTML = boldFormattedItem;
                 
                 window.print();
