@@ -24,28 +24,90 @@ const products = [
         type: [1, 2],
         mods:{
             first: {
-                modClass: "Meats",
+                modClass: "Egg",
                 mod1: {
-                    name: "Bacon",
+                    name: "Basted",
                     price: 0
                 },
                 mod2: {
-                    name: "Ham",
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod3: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Sunny Side Up",
                     price: 0
                 }
             },
             second: {
-                modClass: "Fries and Bread",
+                modClass: "Meat",
                 mod1: {
-                    name: "Home Fries",
+                    name: "Avocado",
                     price: 0
                 },
                 mod2: {
-                    name: "White Bread",
+                    name: "Bacon",
+                    price: 0
+                },
+                mod2: {
+                    name: "Grilled Tomato",
                     price: 0
                 },
                 mod3: {
-                    name: "Brown Bread",
+                    name: "Ham",
+                    price: 0
+                },
+                mod4: {
+                    name: "Sausage",
+                    price: 0
+                },
+                mod5: {
+                    name: "Sliced Tomato",
+                    price: 0
+                }
+            },
+            third: {
+                modClass: "Bread",
+                mod1: {
+                    name: "White",
+                    price: 0
+                },
+                mod2: {
+                    name: "Brown",
+                    price: 0
+                }
+            },
+            fourth: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sub SALAD",
+                    price: 0
+                },
+                mod2: {
+                    name: "Sub FRIES",
                     price: 0
                 }
             }
@@ -446,7 +508,7 @@ const products = [
         id:12,
         name:"Brunch Omelette",
         price:23,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Bread",
@@ -523,7 +585,7 @@ const products = [
         id:14,
         name:"Chicken and Waffles",
         price:22,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Sub",
@@ -542,7 +604,7 @@ const products = [
         id:15,
         name:"Meat Loaf",
         price:21,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Without",
@@ -596,7 +658,7 @@ const products = [
         id:17,
         name:"Pork",
         price:22,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Toast",
@@ -658,41 +720,10 @@ const products = [
         }
     },
     {
-        id:18,
-        name:"Salmon Benedict",
-        price:25,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
-                },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
-                },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
-                },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
-                },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
-                }
-            }
-        }
-    },
-    {
         id:19,
         name:"Salmon Benedict",
         price:23,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Egg",
@@ -739,7 +770,7 @@ const products = [
         id:20,
         name:"Spaghetti BOLO",
         price:23,
-        type: [1, 2],
+        type: [2],
         mods:{
             first: {
                 modClass: "Without",
@@ -846,7 +877,7 @@ const products = [
     {
         id:22,
         name:"Bacon Lettuce Tomato (BLT)",
-        price:23,
+        price:13,
         type: [3],
         mods:{
             first: {
@@ -871,6 +902,499 @@ const products = [
                     price: 0
                 }
             }
+        }
+    },
+    {
+        id:23,
+        name:"Bacon Cheese Burger & Fries",
+        price:14,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:24,
+        name:"Bacon Wrapped Tenderloin",
+        price:25,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:25,
+        name:"Beef Stir Fry",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Rice",
+                mod1: {
+                    name: "On RICE",
+                    price: 0
+                },
+                mod2: {
+                    name: "On NOODLE",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:26,
+        name:"Burger & Fries",
+        price:12,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "SUB SALAD",
+                    price: 0
+                },
+                mod2: {
+                    name: "SUB MASH",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:27,
+        name:"Burger & Fries",
+        price:12,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:28,
+        name:"Chicken Con Queso",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "ON FRIES",
+                    price: 0
+                },
+                mod2: {
+                    name: "ON MASH",
+                    price: 0
+                },
+                mod3: {
+                    name: "ON VEGGIES",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:29,
+        name:"Coconut Curry Chicken",
+        price:19,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "ON FRIES",
+                    price: 0
+                },
+                mod2: {
+                    name: "ON NOODLE",
+                    price: 1
+                },
+                mod3: {
+                    name: "ON VEGGIES",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:30,
+        name:"Chicken Stir Fry",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "ON NOODLE",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:31,
+        name:"Duck Confit",
+        price:23,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sauce on side",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:32,
+        name:"Fish and Chips",
+        price:19,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:33,
+        name:"Flat Iron Steak",
+        price:24,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Rarity",
+                mod1: {
+                    name: "MEDIUM RARE",
+                    price: 0
+                },
+                mod2: {
+                    name: "MEDIUM WELL",
+                    price: 0
+                },
+                mod3: {
+                    name: "MEDIUM",
+                    price: 0
+                },
+                mod4: {
+                    name: "RARE",
+                    price: 0
+                },
+                mod5: {
+                    name: "WELL DONE",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "SUB",
+                mod1: {
+                    name: "SUB MASH",
+                    price: 0
+                },
+                mod2: {
+                    name: "SUB RICE",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:34,
+        name:"Garlic Ginger Seafood",
+        price:21,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:35,
+        name:"Grilled Cheese Special",
+        price:16,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "SUB",
+                mod1: {
+                    name: "SUB MASH",
+                    price: 0
+                },
+                mod2: {
+                    name: "SUB SALAD",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "toast",
+                mod1: {
+                    name: "Brown Toast",
+                    price: 0
+                },
+                mod2: {
+                    name: "White Toast",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:36,
+        name:"House Chow Mein",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "nooooooodle",
+                mod1: {
+                    name: "Crispy Noodle",
+                    price: 0
+                },
+                mod2: {
+                    name: "Soft Noodle",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "On Rice",
+                    price: 0
+                },
+                mod2: {
+                    name: "On Veggies",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:37,
+        name:"Ling Cod",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "starch",
+                mod1: {
+                    name: "Double Starch",
+                    price: 0
+                },
+                mod2: {
+                    name: "Double Veg",
+                    price: 0
+                },
+                mod3: {
+                    name: "No Starch",
+                    price: 0
+                },
+                mod4: {
+                    name: "No Veg",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sauce on side",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:38,
+        name:"Meat Loaf",
+        price:18,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Size",
+                mod1: {
+                    name: "Main 1",
+                    price: 0
+                },
+                mod2: {
+                    name: "Main 2",
+                    price: 3.95
+                }
+            },
+        }
+    },
+    {
+        id:39,
+        name:"Pasta Special",
+        price:22,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:40,
+        name:"Pork Loin",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sauce",
+                mod1: {
+                    name: "Sauce on side",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:41,
+        name:"Pork Schnitzel",
+        price:22,
+        type: [2, 3],
+        mods:{
+        }
+    },
+    {
+        id:42,
+        name:"Roasted Stuffed Chicken",
+        price:19,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:43,
+        name:"Rock Fish",
+        price:22,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "starch",
+                mod1: {
+                    name: "Double Starch",
+                    price: 0
+                },
+                mod2: {
+                    name: "Double Veg",
+                    price: 0
+                },
+                mod3: {
+                    name: "No Starch",
+                    price: 0
+                },
+                mod4: {
+                    name: "No Veg",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sauce on side",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:44,
+        name:"Seafood Pasta",
+        price:23,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:45,
+        name:"Shepards Pie",
+        price:19,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:46,
+        name:"Sockeye Salmon",
+        price:24,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "starch",
+                mod1: {
+                    name: "Double Starch",
+                    price: 0
+                },
+                mod2: {
+                    name: "Double Veg",
+                    price: 0
+                },
+                mod3: {
+                    name: "No Starch",
+                    price: 0
+                },
+                mod4: {
+                    name: "No Veg",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "Sauce on side",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:47,
+        name:"Spaghetti Bolognese",
+        price:18,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:48,
+        name:"Spicy Lamb",
+        price:21,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "noodle",
+                mod1: {
+                    name: "On Noodle",
+                    price: 1
+                }
+            },
+        }
+    },
+    {
+        id:49,
+        name:"Teriyaki",
+        price:17,
+        type: [3],
+        mods:{
+        }
+    },
+    {
+        id:50,
+        name:"Turkey Club",
+        price:17,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Bread",
+                mod1: {
+                    name: "Brown Bread",
+                    price: 0
+                },
+                mod2: {
+                    name: "White Bread",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Sub",
+                mod1: {
+                    name: "SUB MASH",
+                    price: 0
+                },
+                mod2: {
+                    name: "SUB SALAD",
+                    price: 0
+                }
+            },
         }
     },
 ]

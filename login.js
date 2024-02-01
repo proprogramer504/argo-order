@@ -1,35 +1,55 @@
 let loginDiv = document.querySelector("#login")
 
 function initLogin() {
-    let usernameDiv = document.querySelector("#username")
+    let usernameDiv = document.querySelector("#username");
     let usernameInput = document.createElement('input');
     usernameInput.classList.add('username');
     usernameInput.setAttribute('type', 'text');
     usernameInput.setAttribute('placeholder', 'Username');
-    usernameDiv.appendChild(usernameInput)
+    usernameDiv.appendChild(usernameInput);
 
-    let passwordDiv = document.querySelector("#password")
+    let passwordDiv = document.querySelector("#password");
     let passwordInput = document.createElement('input');
     passwordInput.classList.add('password');
     passwordInput.setAttribute('type', 'password');
     passwordInput.setAttribute('placeholder', 'Password');
-    passwordDiv.appendChild(passwordInput)
+    passwordDiv.appendChild(passwordInput);
 
-    let submitDiv = document.querySelector("#submit")
+    const rememberMeCookie = getCookie('rememberMe');
+    if (rememberMeCookie) {
+        const userData = JSON.parse(rememberMeCookie);
+        usernameInput.value = userData.userId;
+        passwordInput.value = userData.password;
+    }
+
+    let submitDiv = document.querySelector("#submit");
     let submitButton = document.createElement('button');
     submitButton.classList.add('submit');
     submitButton.textContent = 'Submit';
     submitButton.addEventListener('click', handleSubmit);
-    submitDiv.appendChild(submitButton)
+    submitDiv.appendChild(submitButton);
 
-    let loginList = document.querySelector("#loginList")
+    let loginList = document.querySelector("#loginList");
     loginList.appendChild(usernameDiv);
     loginList.appendChild(passwordDiv);
     loginList.appendChild(submitDiv);
 
-    loginDiv.appendChild(loginList)
+    loginDiv.appendChild(loginList);
 }
-initLogin()
+initLogin();
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = `expires=${date.toUTCString()}`;
+    document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
 
 function createServerUI() {
     const orderDiv = document.createElement('div');
@@ -147,8 +167,8 @@ function checkOrders() {
 }
 
 function handleSubmit() {
-    let username = document.querySelector('.username').value
-    let password = document.querySelector('.password').value
+    let username = document.querySelector('.username').value;
+    let password = document.querySelector('.password').value;
 
     userData = {
         userId: username,
@@ -167,24 +187,26 @@ function handleSubmit() {
         console.log("Response Status Code:", res.status);
 
         if (res.ok) {
+            setCookie('rememberMe', JSON.stringify(userData), 7);
+
             return res.json();
         } else if (res.status == 401) {
             console.log("Incorrect Credentials")
 
-            document.querySelector('.username').value = ''
-            document.querySelector('.password').value = ''
+            document.querySelector('.username').value = '';
+            document.querySelector('.password').value = '';
         } else {
             throw new Error(`HTTP error! Status: ${res.status}`);
         }
     })
     .then(data => {
         if (data == "serve") {
-            createServerUI()
+            createServerUI();
         } else if (data == "print") {
-            checkOrders()
+            checkOrders();
         }
     })
     .catch(error => {
-        console.error("Error:", error)
+        console.error("Error:", error);
     });
 }
