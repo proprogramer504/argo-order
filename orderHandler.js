@@ -918,6 +918,13 @@ const products = [
         price:25,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -964,6 +971,13 @@ const products = [
         price:12,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1048,6 +1062,13 @@ const products = [
         price:19,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1098,6 +1119,13 @@ const products = [
         price:21,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1219,6 +1247,13 @@ const products = [
         price:22,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1242,6 +1277,13 @@ const products = [
         price:22,
         type: [2, 3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1250,6 +1292,13 @@ const products = [
         price:19,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1292,6 +1341,13 @@ const products = [
         price:23,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1300,6 +1356,13 @@ const products = [
         price:19,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1342,6 +1405,13 @@ const products = [
         price:18,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -1365,6 +1435,13 @@ const products = [
         price:17,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
