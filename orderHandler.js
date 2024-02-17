@@ -1474,6 +1474,51 @@ const products = [
             },
         }
     },
+    {
+        id:51,
+        name:"Special 1",
+        price:21.95,
+        type: [1,2,3],
+        mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
+        }
+    },
+    {
+        id:52,
+        name:"Special 2",
+        price:23.95,
+        type: [1,2,3],
+        mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
+        }
+    },
+    {
+        id:53,
+        name:"Special 3",
+        price:24.95,
+        type: [1,2,3],
+        mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
+        }
+    },
 ]
 
 function enableTypeDisableTable() {
