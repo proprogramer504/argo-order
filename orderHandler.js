@@ -910,6 +910,13 @@ const products = [
         price:14,
         type: [3],
         mods:{
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
+                }
+            },
         }
     },
     {
@@ -961,21 +968,6 @@ const products = [
                 mod2: {
                     name: "SUB MASH",
                     price: 1
-                }
-            },
-        }
-    },
-    {
-        id:27,
-        name:"Burger & Fries",
-        price:12,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
                 }
             },
         }
@@ -1165,14 +1157,10 @@ const products = [
         type: [3],
         mods:{
             first: {
-                modClass: "nooooooodle",
+                modClass: "nan",
                 mod1: {
-                    name: "Crispy Noodle",
-                    price: 0
-                },
-                mod2: {
-                    name: "Soft Noodle",
-                    price: 0
+                    name: "NO MODS AVALIBLE",
+                    price: NaN
                 }
             },
             second: {
@@ -1519,6 +1507,211 @@ const products = [
             },
         }
     },
+    {
+        id: 54,
+        name: "Italian Coffee",
+        price: 3.75,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Type",
+                mod1: {
+                    name: "Regular",
+                    price: 0
+                },
+                mod2: {
+                    name: "Decaf",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id: 55,
+        name: "Tea",
+        price: 3.75,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Flavor",
+                mod1: {
+                    name: "English",
+                    price: 0
+                },
+                mod2: {
+                    name: "Earl Grey",
+                    price: 0
+                },
+                mod3: {
+                    name: "Lady Grey",
+                    price: 0
+                },
+                mod4: {
+                    name: "Green",
+                    price: 0
+                },
+                mod5: {
+                    name: "Mint",
+                    price: 0
+                },
+                mod6: {
+                    name: "Camomile",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id: 56,
+        name: "Americano",
+        price: 4.5,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVAILABLE",
+                    price: NaN
+                }
+            }
+        }
+    },
+    {
+        id: 57,
+        name: "Espresso",
+        price: 3.5,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Size",
+                mod1: {
+                    name: "Single",
+                    price: 0
+                },
+                mod2: {
+                    name: "Double",
+                    price: 0.45
+                }
+            }
+        }
+    },
+    {
+        id: 58,
+        name: "Latte/Cappuccino",
+        price: 4.5,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Size",
+                mod1: {
+                    name: "Single",
+                    price: 0
+                },
+                mod2: {
+                    name: "Double",
+                    price: 1
+                }
+            }
+        }
+    },
+    {
+        id: 59,
+        name: "Orange Juice",
+        price: 4.5,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVAILABLE",
+                    price: NaN
+                }
+            }
+        }
+    },
+    {
+        id: 60,
+        name: "Pomegranate Juice",
+        price: 7,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVAILABLE",
+                    price: NaN
+                }
+            }
+        }
+    },
+    {
+        id: 61,
+        name: "Sodas",
+        price: 2.75,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVAILABLE",
+                    price: NaN
+                }
+            }
+        }
+    },
+    {
+        id: 62,
+        name: "San Pellegrino",
+        price: 3.75,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Flavour",
+                mod1: {
+                    name: "Various",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id: 63,
+        name: "Milkshakes",
+        price: 7,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "Flavor",
+                mod1: {
+                    name: "Vanilla",
+                    price: 0
+                },
+                mod2: {
+                    name: "Chocolate",
+                    price: 0
+                },
+                mod3: {
+                    name: "Strawberry",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
+        id: 64,
+        name: "Chocolate Milk",
+        price: 3.75,
+        type: [1, 2, 3],
+        mods: {
+            first: {
+                modClass: "nan",
+                mod1: {
+                    name: "NO MODS AVAILABLE",
+                    price: NaN
+                }
+            }
+        }
+    }
 ]
 
 function enableTypeDisableTable() {
@@ -1604,17 +1797,14 @@ initApp()
 
 
 function createMods(mods) {
-    let maxMods = Object.keys(mods).length - 1
+    let maxMods = Object.keys(mods).length - 1;
     let currentMod = 0;
-    console.log(maxMods)
     for (const modType in mods) {
         let modDiv = document.createElement("div");
         modDiv.classList.add(`modContainer${currentMod}`);
-        if (currentMod > 0) {
-            modDiv.style.display = "none"
-        }
+        modDiv.style.display = currentMod > 0 ? "none" : "";
         modList.appendChild(modDiv);
-    
+
         for (const mod in mods[modType]) {
             if (mods[modType][mod] != mods[modType].modClass) {
                 let newDiv = document.createElement("div");
@@ -1626,28 +1816,59 @@ function createMods(mods) {
                 modDiv.appendChild(newDiv);
             }
         }
-        if (currentMod == maxMods) {
-            let typeMod = document.createElement('div')
-            typeMod.classList.add("typeMod")
-            typeMod.innerHTML = `
-            <input class="typedMods" placeholder="Type Mods">`
 
-            modDiv.append(typeMod)
-            
-            let newDiv = document.createElement("div");
-            newDiv.classList.add('finalDone');
-            newDiv.innerHTML = `
-                <button onclick="clickedDoneMod()">Back to Foods</button>`;
-            modDiv.appendChild(newDiv);
+        if (currentMod == maxMods) {
+            let typedModWrapper = document.createElement('div');
+            typedModWrapper.classList.add("typedModWrapper");
+
+            let typeMod = document.createElement('div');
+            typeMod.classList.add("typeMod");
+            typeMod.innerHTML = `<input class="typedMods" placeholder="Type Mods">`;
+            typedModWrapper.appendChild(typeMod);
+
+            let doneButtonDiv = document.createElement("div");
+            doneButtonDiv.classList.add('finalDone');
+            doneButtonDiv.innerHTML = `<button onclick="clickedDoneMod()">Back to Foods</button>`;
+            typedModWrapper.appendChild(doneButtonDiv);
+
+            modDiv.appendChild(typedModWrapper);
+
+            addEnterEventListener(typeMod.querySelector('.typedMods'), typedModWrapper);
         } else {
             let newDiv = document.createElement("div");
             newDiv.classList.add('partialDone');
-            newDiv.innerHTML = `
-                <button onclick="clickedPartialDone('${currentMod}', ${currentMod+1})">Done</button>`
+            newDiv.innerHTML = `<button onclick="clickedPartialDone('${currentMod}', ${currentMod+1})">Done</button>`;
             modDiv.appendChild(newDiv);
         }
-        currentMod += 1;
-    }    
+        currentMod++;
+    }
+}
+
+function addEnterEventListener(inputElement, wrapperDiv) {
+    inputElement.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            let newInputDiv = document.createElement('div');
+            newInputDiv.classList.add("typeMod");
+            newInputDiv.innerHTML = `<input class="typedMods" placeholder="Type Mods">`;
+
+            let doneButtonDiv = wrapperDiv.querySelector('.finalDone');
+            if (doneButtonDiv) {
+                wrapperDiv.removeChild(doneButtonDiv);
+            }
+
+            wrapperDiv.appendChild(newInputDiv);
+            newInputDiv.querySelector('.typedMods').focus();
+
+            doneButtonDiv = document.createElement("div");
+            doneButtonDiv.classList.add('finalDone');
+            doneButtonDiv.innerHTML = `<button onclick="clickedDoneMod()">Back to Foods</button>`;
+            wrapperDiv.appendChild(doneButtonDiv);
+
+            addEnterEventListener(newInputDiv.querySelector('.typedMods'), wrapperDiv);
+        }
+    });
 }
 
 
@@ -1709,15 +1930,14 @@ function clickedPartialDone(current, next) {
 }
 
 function clickedDoneMod() {
-    let typedMods = document.querySelectorAll(".typedMods")
-    typedMods.forEach ( (element) => {
-        if (element.value != "") {
-            mods.push(element.value)
+    let typedMods = document.querySelectorAll(".typedMods");
+    typedMods.forEach((element) => {
+        if (element.value.trim() !== "") {
+            mods.push(element.value.trim());
         }
-    })
+    });
 
-    let data = formatData(document.querySelector(".username").value, tableNumber, 
-        products[finalKey].name, currPrice, mods);
+    let data = formatData(document.querySelector(".username").value, tableNumber, products[finalKey].name, currPrice, mods);
     foodOrder.push(data);
 
     mods = [];
@@ -1725,6 +1945,7 @@ function clickedDoneMod() {
     currPrice = 0;
     enableFoodDisableMods();
 }
+
 
 
 function clickedTable (tblNumber) {
@@ -1738,7 +1959,6 @@ function clickedFood (key) {
     createMods(products[key].mods)
     enableModsDisableFood()
 }
-
 
 
 function clickedFinalDone() {

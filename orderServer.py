@@ -13,6 +13,8 @@ user_credentials = {
     "sherri": "S5a",
     "lynda": "L1s",
     "liam": "L2c",
+    "oscar": "O7k",
+    "jonathan": "J7c",
     "printer": 'password'
 }
 
@@ -20,7 +22,7 @@ user_credentials = {
 current_orders = []
 
 def process_items(item_name, item_price, item_mods):
-    processed_string = f'{item_name} : ${item_price}\n'
+    processed_string = f'{item_name}\n'
 
     for mod in item_mods:
         processed_string += f' - {mod}\n'
