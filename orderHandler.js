@@ -72,19 +72,19 @@ const products = [
                     name: "Bacon",
                     price: 0
                 },
-                mod2: {
+                mod3: {
                     name: "Grilled Tomato",
                     price: 0
                 },
-                mod3: {
+                mod4: {
                     name: "Ham",
                     price: 0
                 },
-                mod4: {
+                mod5: {
                     name: "Sausage",
                     price: 0
-                },
-                mod5: {
+                 },
+                mod6: {
                     name: "Sliced Tomato",
                     price: 0
                 }
@@ -237,19 +237,19 @@ const products = [
                     name: "Bacon",
                     price: 0
                 },
-                mod2: {
+                mod3: {
                     name: "Grilled Tomato",
                     price: 0
                 },
-                mod3: {
+                mod4: {
                     name: "Ham",
                     price: 0
                 },
-                mod4: {
+                mod5: {
                     name: "Sausage",
                     price: 0
                 },
-                mod5: {
+                mod6: {
                     name: "Sliced Tomato",
                     price: 0
                 }
