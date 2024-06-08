@@ -1509,7 +1509,7 @@ const products = [
     },
     {
         id: 54,
-        name: "Italian Coffee",
+        name: "Coffee",
         price: 3.75,
         type: [1, 2, 3],
         mods: {
@@ -1708,6 +1708,91 @@ const products = [
                 mod1: {
                     name: "NO MODS AVAILABLE",
                     price: NaN
+                }
+            }
+        }
+    },
+    {
+        id:65,
+        name:"Shortrib Benny",
+        price:16,
+        type: [2, 3],
+        mods:{
+            first: {
+                modClass: "Sauce",
+                mod1: {
+                    name: "Hollandaise ON SIDE",
+                    price: 0
+                },
+                mod2: {
+                    name: "NO Hollandaise",
+                    price: 0
+                }
+            },
+            second: {
+                modClass: "Egg",
+                mod1: {
+                    name: "Over Easy",
+                    price: 0
+                },
+                mod2: {
+                    name: "Over Medium",
+                    price: 0
+                },
+                mod4: {
+                    name: "Over Hard",
+                    price: 0
+                },
+                mod5: {
+                    name: "Poached Soft",
+                    price: 0
+                },
+                mod6: {
+                    name: "Poached Medium",
+                    price: 0
+                },
+                mod7: {
+                    name: "Poached Hard",
+                    price: 0
+                },
+                mod8: {
+                    name: "Scrambled",
+                    price: 0
+                },
+                mod9: {
+                    name: "Scrambled Hard",
+                    price: 0
+                },
+                mod10: {
+                    name: "Sunny Side Up",
+                    price: 0
+                }
+            },
+        }
+    },
+    {
+        id:2,
+        name:"Cheese Burger Fries",
+        price:17,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sides",
+                mod2: {
+                    name: "Mashed Potatoes",
+                    price: 0
+                },
+                mod3: {
+                    name: "NO Side",
+                    price: -3
+                },
+                mod4: {
+                    name: "Salad",
+                    price: 2
+                },
+                mod5: {
+                    name: "Side Veggies",
+                    price: 0
                 }
             }
         }
