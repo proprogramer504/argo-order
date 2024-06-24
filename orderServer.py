@@ -44,10 +44,14 @@ def get_order_items(data):
 def finalize_order(user_id, table_number, orders):
     if table_number == 0:
         formatted_order = f'\nServer ID: {user_id} \n TOGO Order\n\n'
-    elif table_number > 10:
-        formatted_order = f'\nServer ID: {user_id} \n Bar: {table_number - 9}\n\n'
-    else:
+    elif table_number < 11 and table_number > 0:
         formatted_order = f'\nServer ID: {user_id} \nTable Number: {table_number}\n\n'
+    elif table_number < 20 and table_number > 10:
+        formatted_order = f'\nServer ID: {user_id} \n Bar: {table_number - 10}\n\n'
+    elif table_number < 23 and table_number > 19:
+        formatted_order = f'\nServer ID: {user_id} \n Outside: {table_number - 19}\n\n'
+    else:
+        formatted_order = f'\nServer ID: {user_id} \n Patio: {table_number - 22}\n\n'
     
     for i, item in enumerate(orders, start=1):
         formatted_order += f'{item}\n'
