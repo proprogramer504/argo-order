@@ -1875,12 +1875,12 @@ function initApp () {
         tableList.appendChild(newDiv)
     }
 
-    for(let item = 22; item < 27; item++) {
+    for(let item = 22; item < 28; item++) {
         let newDiv = document.createElement('div')
 
         newDiv.classList.add('table')
         newDiv.innerHTML = `
-            <button onclick="clickedTable(${item + 1})">Patio ${item - 21}</button>`
+            <button onclick="clickedTable(${item + 1})">Patio ${item - 22}</button>`
         tableList.appendChild(newDiv)
     }
 
