@@ -1880,7 +1880,7 @@ function initApp () {
 
         newDiv.classList.add('table')
         newDiv.innerHTML = `
-            <button onclick="clickedTable(${item + 1})">Patio ${item - 22}</button>`
+            <button onclick="clickedTable(${item + 1})">Patio ${item - 21}</button>`
         tableList.appendChild(newDiv)
     }
 
