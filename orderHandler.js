@@ -920,6 +920,33 @@ const products = [
         }
     },
     {
+        id:66,
+        name:"Cheese Burger Fries",
+        price:17,
+        type: [3],
+        mods:{
+            first: {
+                modClass: "Sides",
+                mod2: {
+                    name: "Mashed Potatoes",
+                    price: 0
+                },
+                mod3: {
+                    name: "NO Side",
+                    price: -3
+                },
+                mod4: {
+                    name: "Salad",
+                    price: 2
+                },
+                mod5: {
+                    name: "Side Veggies",
+                    price: 0
+                }
+            }
+        }
+    },
+    {
         id:24,
         name:"Bacon Wrapped Tenderloin",
         price:25,
@@ -1770,33 +1797,6 @@ const products = [
             },
         }
     },
-    {
-        id:2,
-        name:"Cheese Burger Fries",
-        price:17,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sides",
-                mod2: {
-                    name: "Mashed Potatoes",
-                    price: 0
-                },
-                mod3: {
-                    name: "NO Side",
-                    price: -3
-                },
-                mod4: {
-                    name: "Salad",
-                    price: 2
-                },
-                mod5: {
-                    name: "Side Veggies",
-                    price: 0
-                }
-            }
-        }
-    }
 ]
 
 function enableTypeDisableTable() {

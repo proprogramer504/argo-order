@@ -15,6 +15,7 @@ user_credentials = {
     "liam": "L2c",
     "oscar": "O7k",
     "jonathan": "J7c",
+    "erik" : "E0g",
     "printer": 'password'
 }
 
