@@ -102,7 +102,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -177,7 +177,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -203,7 +203,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -295,7 +295,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -332,7 +332,7 @@ let mods = []
                     "name": "NO Butter",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -424,7 +424,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -461,7 +461,7 @@ let mods = []
                     "name": "NO Butter",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -487,7 +487,7 @@ let mods = []
                     "name": "NO Butter",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -584,7 +584,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -888,7 +888,7 @@ let mods = []
                     "name": "Brown",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -1629,7 +1629,7 @@ let mods = []
                     "name": "White Bread",
                     "price": 0
                 },
-                "modNaN": {
+                "mod3": {
                     "name": "No Bread",
                     "price": 0
                 }
@@ -2010,6 +2010,26 @@ let mods = []
                 "mod10": {
                     "name": "Sunny Side Up",
                     "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 66,
+        "name": "Side Salad",
+        "price": 17,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "first": {
+                    "modClass": "nan",
+                    "mod1": {
+                        "name": "NO MODS AVAILABLE",
+                        "price": null
+                    }
                 }
             }
         }
