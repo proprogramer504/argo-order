@@ -16,7 +16,7 @@ let foodOrder = []
 let mods = []
 
 // inside type 1 is breakfast 2 is brunch 3 is lunch
-[
+const products = [
     {
         "id": 1,
         "name": "Basic Breakfast",
