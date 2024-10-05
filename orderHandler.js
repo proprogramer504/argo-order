@@ -16,1787 +16,1996 @@ let foodOrder = []
 let mods = []
 
 // inside type 1 is breakfast 2 is brunch 3 is lunch
-const products = [
+[
     {
-        id:1,
-        name:"Basic Breakfast",
-        price:15,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
+        "id": 1,
+        "name": "Basic Breakfast",
+        "price": 15,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Meat",
-                mod1: {
-                    name: "Avocado",
-                    price: 0
+            "second": {
+                "modClass": "Meat",
+                "mod1": {
+                    "name": "Avocado",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Bacon",
-                    price: 0
+                "mod2": {
+                    "name": "Bacon",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Grilled Tomato",
-                    price: 0
+                "mod3": {
+                    "name": "Grilled Tomato",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Ham",
-                    price: 0
+                "mod4": {
+                    "name": "Ham",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Sausage",
-                    price: 0
-                 },
-                mod6: {
-                    name: "Sliced Tomato",
-                    price: 0
+                "mod5": {
+                    "name": "Sausage",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Sliced Tomato",
+                    "price": 0
                 }
             },
-            third: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+            "third": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             },
-            fourth: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sub SALAD",
-                    price: 0
+            "fourth": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sub SALAD",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Sub FRIES",
-                    price: 0
+                "mod2": {
+                    "name": "Sub FRIES",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:2,
-        name:"Argo Burger",
-        price:17,
-        type: [2, 3],
-        mods:{
-            first: {
-                modClass: "Sides",
-                mod1: {
-                    name: "Fries",
-                    price: 0
+        "id": 2,
+        "name": "Argo Burger",
+        "price": 17,
+        "type": [
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sides",
+                "mod1": {
+                    "name": "Fries",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Mashed Potatoes",
-                    price: 0
+                "mod2": {
+                    "name": "Mashed Potatoes",
+                    "price": 0
                 },
-                mod3: {
-                    name: "NO Side",
-                    price: -3
+                "mod3": {
+                    "name": "NO Side",
+                    "price": -3
                 },
-                mod4: {
-                    name: "Salad",
-                    price: 2
+                "mod4": {
+                    "name": "Salad",
+                    "price": 2
                 },
-                mod5: {
-                    name: "Side Veggies",
-                    price: 0
+                "mod5": {
+                    "name": "Side Veggies",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:3,
-        name:"Breakfast Club",
-        price:17,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 3,
+        "name": "Breakfast Club",
+        "price": 17,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:4,
-        name:"Daily Omelette",
-        price:19,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 4,
+        "name": "Daily Omelette",
+        "price": 19,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:5,
-        name:"Cakes Platter",
-        price:19,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
+        "id": 5,
+        "name": "Cakes Platter",
+        "price": 19,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Meat",
-                mod1: {
-                    name: "Avocado",
-                    price: 0
+            "second": {
+                "modClass": "Meat",
+                "mod1": {
+                    "name": "Avocado",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Bacon",
-                    price: 0
+                "mod2": {
+                    "name": "Bacon",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Grilled Tomato",
-                    price: 0
+                "mod3": {
+                    "name": "Grilled Tomato",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Ham",
-                    price: 0
+                "mod4": {
+                    "name": "Ham",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Sausage",
-                    price: 0
+                "mod5": {
+                    "name": "Sausage",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Sliced Tomato",
-                    price: 0
+                "mod6": {
+                    "name": "Sliced Tomato",
+                    "price": 0
                 }
             },
-            third: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+            "third": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             },
-            fourth: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sub SALAD",
-                    price: 0
+            "fourth": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sub SALAD",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Sub FRIES",
-                    price: 0
+                "mod2": {
+                    "name": "Sub FRIES",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:6,
-        name:"Pancakes",
-        price:16,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "NO Fruit",
-                    price: 0
+        "id": 6,
+        "name": "Pancakes",
+        "price": 16,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "NO Fruit",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Butter",
-                    price: 0
+                "mod2": {
+                    "name": "NO Butter",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:7,
-        name:"French Platter",
-        price:19,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
+        "id": 7,
+        "name": "French Platter",
+        "price": 19,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Meat",
-                mod1: {
-                    name: "Avocado",
-                    price: 0
+            "second": {
+                "modClass": "Meat",
+                "mod1": {
+                    "name": "Avocado",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Bacon",
-                    price: 0
+                "mod2": {
+                    "name": "Bacon",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Grilled Tomato",
-                    price: 0
+                "mod3": {
+                    "name": "Grilled Tomato",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Ham",
-                    price: 0
+                "mod4": {
+                    "name": "Ham",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Sausage",
-                    price: 0
+                "mod5": {
+                    "name": "Sausage",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Sliced Tomato",
-                    price: 0
+                "mod6": {
+                    "name": "Sliced Tomato",
+                    "price": 0
                 }
             },
-            third: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+            "third": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             },
-            fourth: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sub SALAD",
-                    price: 0
+            "fourth": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sub SALAD",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Sub FRIES",
-                    price: 0
+                "mod2": {
+                    "name": "Sub FRIES",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:8,
-        name:"French Toast",
-        price:13,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "NO Fruit",
-                    price: 0
+        "id": 8,
+        "name": "French Toast",
+        "price": 13,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "NO Fruit",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Butter",
-                    price: 0
+                "mod2": {
+                    "name": "NO Butter",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:9,
-        name:"Waffles",
-        price:16,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "NO Fruit",
-                    price: 0
+        "id": 9,
+        "name": "Waffles",
+        "price": 16,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "NO Fruit",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Butter",
-                    price: 0
+                "mod2": {
+                    "name": "NO Butter",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:11,
-        name:"Con Queso Eggs",
-        price:17,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Over Easy",
-                    price: 0
+        "id": 11,
+        "name": "Con Queso Eggs",
+        "price": 17,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Medium",
-                    price: 0
+                "mod2": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Hard",
-                    price: 0
+                "mod3": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod4": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Scrambled",
-                    price: 0
+                "mod7": {
+                    "name": "Scrambled",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled Hard",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled Hard",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sub Sauce",
-                    price: 0
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sub Sauce",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Sub Bacon",
-                    price: 0
-                },
-                mod2: {
-                    name: "Sub Ham",
-                    price: 0
+                "mod2": {
+                    "name": "Sub Ham",
+                    "price": 0
                 }
             },
-            third: {
-                modClass: "Sauce",
-                mod1: {
-                    name: "Sauce on Side",
-                    price: 0
+            "third": {
+                "modClass": "Sauce",
+                "mod1": {
+                    "name": "Sauce on Side",
+                    "price": 0
                 },
-                mod2: {
-                    name: "No Sauce",
-                    price: 0
+                "mod2": {
+                    "name": "No Sauce",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:12,
-        name:"Brunch Omelette",
-        price:23,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 12,
+        "name": "Brunch Omelette",
+        "price": 23,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:13,
-        name:"Eggs Benedict",
-        price:16,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Sauce",
-                mod1: {
-                    name: "Hollandaise ON SIDE",
-                    price: 0
+        "id": 13,
+        "name": "Eggs Benedict",
+        "price": 16,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sauce",
+                "mod1": {
+                    "name": "Hollandaise ON SIDE",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Hollandaise",
-                    price: 0
+                "mod2": {
+                    "name": "NO Hollandaise",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Over Easy",
-                    price: 0
+            "second": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Medium",
-                    price: 0
+                "mod2": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Scrambled Hard",
-                    price: 0
+                "mod9": {
+                    "name": "Scrambled Hard",
+                    "price": 0
                 },
-                mod10: {
-                    name: "Sunny Side Up",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:14,
-        name:"Chicken and Waffles",
-        price:22,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sub SALAD",
-                    price: 0
-                },
-                mod2: {
-                    name: "Sub FRIES",
-                    price: 0
+                "mod10": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:15,
-        name:"Meat Loaf",
-        price:21,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Without",
-                mod1: {
-                    name: "NO Tomato Sauce",
-                    price: 0
+        "id": 14,
+        "name": "Chicken and Waffles",
+        "price": 22,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sub SALAD",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Homefries",
-                    price: 0
-                },
-                mod3: {
-                    name: "NO Salad",
-                    price: 0
+                "mod2": {
+                    "name": "Sub FRIES",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:16,
-        name:"Pancakes and Duck Confit",
-        price:23,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Without",
-                mod1: {
-                    name: "NO Pancakes",
-                    price: 0
+        "id": 15,
+        "name": "Meat Loaf",
+        "price": 21,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Without",
+                "mod1": {
+                    "name": "NO Tomato Sauce",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Duck",
-                    price: 0
+                "mod2": {
+                    "name": "NO Homefries",
+                    "price": 0
                 },
-                mod3: {
-                    name: "NO Fruit",
-                    price: 0
-                },
-                mod4: {
-                    name: "NO Butter",
-                    price: 0
-                },
-                mod5: {
-                    name: "NO Compote",
-                    price: 0
+                "mod3": {
+                    "name": "NO Salad",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:17,
-        name:"Pork",
-        price:22,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Toast",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 16,
+        "name": "Pancakes and Duck Confit",
+        "price": 23,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Without",
+                "mod1": {
+                    "name": "NO Pancakes",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
+                "mod2": {
+                    "name": "NO Duck",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
+                "mod3": {
+                    "name": "NO Fruit",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
+                "mod4": {
+                    "name": "NO Butter",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
-                },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
-                },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
-                },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
-                },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
-                },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
-                }
-            },
-            third: {
-                modClass: "Sauce",
-                mod1: {
-                    name:"Extra Mush Sauce",
-                    price: 0
+                "mod5": {
+                    "name": "NO Compote",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:19,
-        name:"Salmon Benedict",
-        price:23,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
+        "id": 17,
+        "name": "Pork",
+        "price": 22,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Toast",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
                 },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
                 },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
                 },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
                 },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
                 },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
                 },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
+                },
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
+                }
+            },
+            "third": {
+                "modClass": "Sauce",
+                "mod1": {
+                    "name": "Extra Mush Sauce",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:20,
-        name:"Spaghetti BOLO",
-        price:23,
-        type: [2],
-        mods:{
-            first: {
-                modClass: "Without",
-                mod1: {
-                    name: "Garlic Toast",
-                    price: 0
+        "id": 19,
+        "name": "Salmon Benedict",
+        "price": 23,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Parmesan Cheese",
-                    price: 0
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
+                },
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
+                },
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
+                },
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:21,
-        name:"Steak and Eggs",
-        price:24,
-        type: [1, 2],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 20,
+        "name": "Spaghetti BOLO",
+        "price": 23,
+        "type": [
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Without",
+                "mod1": {
+                    "name": "Garlic Toast",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Meat",
-                mod1: {
-                    name: "Blue Rare",
-                    price: 0
-                },
-                mod2: {
-                    name: "Med Rare",
-                    price: 0
-                },
-                mod3: {
-                    name: "Med Well",
-                    price: 0
-                },
-                mod4: {
-                    name: "Medium",
-                    price: 0
-                },
-                mod5: {
-                    name: "Rare",
-                    price: 0
-                },
-                mod6: {
-                    name: "Well Done",
-                    price: 0
-                }
-            },
-            third: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Basted",
-                    price: 0
-                },
-                mod2: {
-                    name: "Over Easy",
-                    price: 0
-                },
-                mod3: {
-                    name: "Over Medium",
-                    price: 0
-                },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
-                },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
-                },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
-                },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
-                },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
-                },
-                mod9: {
-                    name: "Sunny Side Up",
-                    price: 0
-                },
-                mod10: {
-                    name: "Boiled",
-                    price: 0
+                "mod2": {
+                    "name": "Parmesan Cheese",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:22,
-        name:"Bacon Lettuce Tomato (BLT)",
-        price:13,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Toast",
-                mod1: {
-                    name: "White",
-                    price: 0
+        "id": 21,
+        "name": "Steak and Eggs",
+        "price": 24,
+        "type": [
+            1,
+            2
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Brown",
-                    price: 0
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Side",
-                mod1: {
-                    name: "Sub Mash",
-                    price: 0
+            "second": {
+                "modClass": "Meat",
+                "mod1": {
+                    "name": "Blue Rare",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Sub Salad",
-                    price: 0
+                "mod2": {
+                    "name": "Med Rare",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "Med Well",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "Medium",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "Rare",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Well Done",
+                    "price": 0
+                }
+            },
+            "third": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Basted",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Over Easy",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "Over Medium",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
+                },
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
+                },
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
+                },
+                "mod9": {
+                    "name": "Sunny Side Up",
+                    "price": 0
+                },
+                "mod10": {
+                    "name": "Boiled",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:23,
-        name:"Bacon Cheese Burger & Fries",
-        price:14,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
+        "id": 22,
+        "name": "Bacon Lettuce Tomato (BLT)",
+        "price": 13,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Toast",
+                "mod1": {
+                    "name": "White",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Brown",
+                    "price": 0
                 }
             },
-        }
-    },
-    {
-        id:66,
-        name:"Cheese Burger Fries",
-        price:17,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sides",
-                mod2: {
-                    name: "Mashed Potatoes",
-                    price: 0
+            "second": {
+                "modClass": "Side",
+                "mod1": {
+                    "name": "Sub Mash",
+                    "price": 0
                 },
-                mod3: {
-                    name: "NO Side",
-                    price: -3
-                },
-                mod4: {
-                    name: "Salad",
-                    price: 2
-                },
-                mod5: {
-                    name: "Side Veggies",
-                    price: 0
+                "mod2": {
+                    "name": "Sub Salad",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:24,
-        name:"Bacon Wrapped Tenderloin",
-        price:25,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:25,
-        name:"Beef Stir Fry",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Rice",
-                mod1: {
-                    name: "On RICE",
-                    price: 0
-                },
-                mod2: {
-                    name: "On NOODLE",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:26,
-        name:"Burger & Fries",
-        price:12,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "SUB SALAD",
-                    price: 0
-                },
-                mod2: {
-                    name: "SUB MASH",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:28,
-        name:"Chicken Con Queso",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "ON FRIES",
-                    price: 0
-                },
-                mod2: {
-                    name: "ON MASH",
-                    price: 0
-                },
-                mod3: {
-                    name: "ON VEGGIES",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:29,
-        name:"Coconut Curry Chicken",
-        price:19,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "ON FRIES",
-                    price: 0
-                },
-                mod2: {
-                    name: "ON NOODLE",
-                    price: 1
-                },
-                mod3: {
-                    name: "ON VEGGIES",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:30,
-        name:"Chicken Stir Fry",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "ON NOODLE",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:31,
-        name:"Duck Confit",
-        price:23,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sauce on side",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:32,
-        name:"Fish and Chips",
-        price:19,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:33,
-        name:"Flat Iron Steak",
-        price:24,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Rarity",
-                mod1: {
-                    name: "MEDIUM RARE",
-                    price: 0
-                },
-                mod2: {
-                    name: "MEDIUM WELL",
-                    price: 0
-                },
-                mod3: {
-                    name: "MEDIUM",
-                    price: 0
-                },
-                mod4: {
-                    name: "RARE",
-                    price: 0
-                },
-                mod5: {
-                    name: "WELL DONE",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "SUB",
-                mod1: {
-                    name: "SUB MASH",
-                    price: 0
-                },
-                mod2: {
-                    name: "SUB RICE",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:34,
-        name:"Garlic Ginger Seafood",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:35,
-        name:"Grilled Cheese Special",
-        price:16,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "SUB",
-                mod1: {
-                    name: "SUB MASH",
-                    price: 0
-                },
-                mod2: {
-                    name: "SUB SALAD",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "toast",
-                mod1: {
-                    name: "Brown Toast",
-                    price: 0
-                },
-                mod2: {
-                    name: "White Toast",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:36,
-        name:"House Chow Mein",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "On Rice",
-                    price: 0
-                },
-                mod2: {
-                    name: "On Veggies",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:37,
-        name:"Ling Cod",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "starch",
-                mod1: {
-                    name: "Double Starch",
-                    price: 0
-                },
-                mod2: {
-                    name: "Double Veg",
-                    price: 0
-                },
-                mod3: {
-                    name: "No Starch",
-                    price: 0
-                },
-                mod4: {
-                    name: "No Veg",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sauce on side",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:38,
-        name:"Meat Loaf",
-        price:18,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Size",
-                mod1: {
-                    name: "Main 1",
-                    price: 0
-                },
-                mod2: {
-                    name: "Main 2",
-                    price: 3.95
-                }
-            },
-        }
-    },
-    {
-        id:39,
-        name:"Pasta Special",
-        price:22,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:40,
-        name:"Pork Loin",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Sauce",
-                mod1: {
-                    name: "Sauce on side",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:41,
-        name:"Pork Schnitzel",
-        price:22,
-        type: [2, 3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:42,
-        name:"Roasted Stuffed Chicken",
-        price:19,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:43,
-        name:"Rock Fish",
-        price:22,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "starch",
-                mod1: {
-                    name: "Double Starch",
-                    price: 0
-                },
-                mod2: {
-                    name: "Double Veg",
-                    price: 0
-                },
-                mod3: {
-                    name: "No Starch",
-                    price: 0
-                },
-                mod4: {
-                    name: "No Veg",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sauce on side",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:44,
-        name:"Seafood Pasta",
-        price:23,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:45,
-        name:"Shepards Pie",
-        price:19,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:46,
-        name:"Sockeye Salmon",
-        price:24,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "starch",
-                mod1: {
-                    name: "Double Starch",
-                    price: 0
-                },
-                mod2: {
-                    name: "Double Veg",
-                    price: 0
-                },
-                mod3: {
-                    name: "No Starch",
-                    price: 0
-                },
-                mod4: {
-                    name: "No Veg",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "Sauce on side",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:47,
-        name:"Spaghetti Bolognese",
-        price:18,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:48,
-        name:"Spicy Lamb",
-        price:21,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "noodle",
-                mod1: {
-                    name: "On Noodle",
-                    price: 1
-                }
-            },
-        }
-    },
-    {
-        id:49,
-        name:"Teriyaki",
-        price:17,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:50,
-        name:"Turkey Club",
-        price:17,
-        type: [3],
-        mods:{
-            first: {
-                modClass: "Bread",
-                mod1: {
-                    name: "Brown Bread",
-                    price: 0
-                },
-                mod2: {
-                    name: "White Bread",
-                    price: 0
-                }
-            },
-            second: {
-                modClass: "Sub",
-                mod1: {
-                    name: "SUB MASH",
-                    price: 0
-                },
-                mod2: {
-                    name: "SUB SALAD",
-                    price: 0
-                }
-            },
-        }
-    },
-    {
-        id:51,
-        name:"Special 1",
-        price:21.95,
-        type: [1,2,3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:52,
-        name:"Special 2",
-        price:23.95,
-        type: [1,2,3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id:53,
-        name:"Special 3",
-        price:24.95,
-        type: [1,2,3],
-        mods:{
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVALIBLE",
-                    price: NaN
-                }
-            },
-        }
-    },
-    {
-        id: 54,
-        name: "Coffee",
-        price: 3.75,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Type",
-                mod1: {
-                    name: "Regular",
-                    price: 0
-                },
-                mod2: {
-                    name: "Decaf",
-                    price: 0
+        "id": 23,
+        "name": "Bacon Cheese Burger & Fries",
+        "price": 14,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
                 }
             }
         }
     },
     {
-        id: 55,
-        name: "Tea",
-        price: 3.75,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Flavor",
-                mod1: {
-                    name: "English",
-                    price: 0
+        "id": 66,
+        "name": "Cheese Burger Fries",
+        "price": 17,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sides",
+                "mod2": {
+                    "name": "Mashed Potatoes",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Earl Grey",
-                    price: 0
+                "mod3": {
+                    "name": "NO Side",
+                    "price": -3
                 },
-                mod3: {
-                    name: "Lady Grey",
-                    price: 0
+                "mod4": {
+                    "name": "Salad",
+                    "price": 2
                 },
-                mod4: {
-                    name: "Green",
-                    price: 0
-                },
-                mod5: {
-                    name: "Mint",
-                    price: 0
-                },
-                mod6: {
-                    name: "Camomile",
-                    price: 0
+                "mod5": {
+                    "name": "Side Veggies",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id: 56,
-        name: "Americano",
-        price: 4.5,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVAILABLE",
-                    price: NaN
+        "id": 24,
+        "name": "Bacon Wrapped Tenderloin",
+        "price": 25,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
                 }
             }
         }
     },
     {
-        id: 57,
-        name: "Espresso",
-        price: 3.5,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Size",
-                mod1: {
-                    name: "Single",
-                    price: 0
+        "id": 25,
+        "name": "Beef Stir Fry",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Rice",
+                "mod1": {
+                    "name": "On RICE",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Double",
-                    price: 0.45
+                "mod2": {
+                    "name": "On NOODLE",
+                    "price": 1
                 }
             }
         }
     },
     {
-        id: 58,
-        name: "Latte/Cappuccino",
-        price: 4.5,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Size",
-                mod1: {
-                    name: "Single",
-                    price: 0
+        "id": 26,
+        "name": "Burger & Fries",
+        "price": 12,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "SUB SALAD",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Double",
-                    price: 1
+                "mod2": {
+                    "name": "SUB MASH",
+                    "price": 1
                 }
             }
         }
     },
     {
-        id: 59,
-        name: "Orange Juice",
-        price: 4.5,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVAILABLE",
-                    price: NaN
-                }
-            }
-        }
-    },
-    {
-        id: 60,
-        name: "Pomegranate Juice",
-        price: 7,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVAILABLE",
-                    price: NaN
-                }
-            }
-        }
-    },
-    {
-        id: 61,
-        name: "Sodas",
-        price: 2.75,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVAILABLE",
-                    price: NaN
-                }
-            }
-        }
-    },
-    {
-        id: 62,
-        name: "San Pellegrino",
-        price: 3.75,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Flavour",
-                mod1: {
-                    name: "Various",
-                    price: 0
-                }
-            }
-        }
-    },
-    {
-        id: 63,
-        name: "Milkshakes",
-        price: 7,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "Flavor",
-                mod1: {
-                    name: "Vanilla",
-                    price: 0
+        "id": 28,
+        "name": "Chicken Con Queso",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "ON FRIES",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Chocolate",
-                    price: 0
+                "mod2": {
+                    "name": "ON MASH",
+                    "price": 0
                 },
-                mod3: {
-                    name: "Strawberry",
-                    price: 0
+                "mod3": {
+                    "name": "ON VEGGIES",
+                    "price": 1
                 }
             }
         }
     },
     {
-        id: 64,
-        name: "Chocolate Milk",
-        price: 3.75,
-        type: [1, 2, 3],
-        mods: {
-            first: {
-                modClass: "nan",
-                mod1: {
-                    name: "NO MODS AVAILABLE",
-                    price: NaN
+        "id": 29,
+        "name": "Coconut Curry Chicken",
+        "price": 19,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "ON FRIES",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "ON NOODLE",
+                    "price": 1
+                },
+                "mod3": {
+                    "name": "ON VEGGIES",
+                    "price": 0
                 }
             }
         }
     },
     {
-        id:65,
-        name:"Shortrib Benny",
-        price:16,
-        type: [2, 3],
-        mods:{
-            first: {
-                modClass: "Sauce",
-                mod1: {
-                    name: "Hollandaise ON SIDE",
-                    price: 0
+        "id": 30,
+        "name": "Chicken Stir Fry",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "ON NOODLE",
+                    "price": 1
+                }
+            }
+        }
+    },
+    {
+        "id": 31,
+        "name": "Duck Confit",
+        "price": 23,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sauce on side",
+                    "price": 1
+                }
+            }
+        }
+    },
+    {
+        "id": 32,
+        "name": "Fish and Chips",
+        "price": 19,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 33,
+        "name": "Flat Iron Steak",
+        "price": 24,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Rarity",
+                "mod1": {
+                    "name": "MEDIUM RARE",
+                    "price": 0
                 },
-                mod2: {
-                    name: "NO Hollandaise",
-                    price: 0
+                "mod2": {
+                    "name": "MEDIUM WELL",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "MEDIUM",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "RARE",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "WELL DONE",
+                    "price": 0
                 }
             },
-            second: {
-                modClass: "Egg",
-                mod1: {
-                    name: "Over Easy",
-                    price: 0
+            "second": {
+                "modClass": "SUB",
+                "mod1": {
+                    "name": "SUB MASH",
+                    "price": 0
                 },
-                mod2: {
-                    name: "Over Medium",
-                    price: 0
-                },
-                mod4: {
-                    name: "Over Hard",
-                    price: 0
-                },
-                mod5: {
-                    name: "Poached Soft",
-                    price: 0
-                },
-                mod6: {
-                    name: "Poached Medium",
-                    price: 0
-                },
-                mod7: {
-                    name: "Poached Hard",
-                    price: 0
-                },
-                mod8: {
-                    name: "Scrambled",
-                    price: 0
-                },
-                mod9: {
-                    name: "Scrambled Hard",
-                    price: 0
-                },
-                mod10: {
-                    name: "Sunny Side Up",
-                    price: 0
+                "mod2": {
+                    "name": "SUB RICE",
+                    "price": 0
                 }
-            },
+            }
         }
     },
+    {
+        "id": 34,
+        "name": "Garlic Ginger Seafood",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 35,
+        "name": "Grilled Cheese Special",
+        "price": 16,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "SUB",
+                "mod1": {
+                    "name": "SUB MASH",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "SUB SALAD",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "toast",
+                "mod1": {
+                    "name": "Brown Toast",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "White Toast",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 36,
+        "name": "House Chow Mein",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            },
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "On Rice",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "On Veggies",
+                    "price": 1
+                }
+            }
+        }
+    },
+    {
+        "id": 37,
+        "name": "Ling Cod",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "starch",
+                "mod1": {
+                    "name": "Double Starch",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Double Veg",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "No Starch",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "No Veg",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sauce on side",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 38,
+        "name": "Meat Loaf",
+        "price": 18,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Size",
+                "mod1": {
+                    "name": "Main 1",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Main 2",
+                    "price": 3.95
+                }
+            }
+        }
+    },
+    {
+        "id": 39,
+        "name": "Pasta Special",
+        "price": 22,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 40,
+        "name": "Pork Loin",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sauce",
+                "mod1": {
+                    "name": "Sauce on side",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 41,
+        "name": "Pork Schnitzel",
+        "price": 22,
+        "type": [
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 42,
+        "name": "Roasted Stuffed Chicken",
+        "price": 19,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 43,
+        "name": "Rock Fish",
+        "price": 22,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "starch",
+                "mod1": {
+                    "name": "Double Starch",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Double Veg",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "No Starch",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "No Veg",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sauce on side",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 44,
+        "name": "Seafood Pasta",
+        "price": 23,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 45,
+        "name": "Shepards Pie",
+        "price": 19,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 46,
+        "name": "Sockeye Salmon",
+        "price": 24,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "starch",
+                "mod1": {
+                    "name": "Double Starch",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Double Veg",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "No Starch",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "No Veg",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "Sauce on side",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 47,
+        "name": "Spaghetti Bolognese",
+        "price": 18,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 48,
+        "name": "Spicy Lamb",
+        "price": 21,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "noodle",
+                "mod1": {
+                    "name": "On Noodle",
+                    "price": 1
+                }
+            }
+        }
+    },
+    {
+        "id": 49,
+        "name": "Teriyaki",
+        "price": 17,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 50,
+        "name": "Turkey Club",
+        "price": 17,
+        "type": [
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Bread",
+                "mod1": {
+                    "name": "Brown Bread",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "White Bread",
+                    "price": 0
+                },
+                "modNaN": {
+                    "name": "No Bread",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Sub",
+                "mod1": {
+                    "name": "SUB MASH",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "SUB SALAD",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 51,
+        "name": "Special 1",
+        "price": 21.95,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 52,
+        "name": "Special 2",
+        "price": 23.95,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 53,
+        "name": "Special 3",
+        "price": 24.95,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVALIBLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 54,
+        "name": "Coffee",
+        "price": 3.75,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Type",
+                "mod1": {
+                    "name": "Regular",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Decaf",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 55,
+        "name": "Tea",
+        "price": 3.75,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Flavor",
+                "mod1": {
+                    "name": "English",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Earl Grey",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "Lady Grey",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "Green",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "Mint",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Camomile",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 56,
+        "name": "Americano",
+        "price": 4.5,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVAILABLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 57,
+        "name": "Espresso",
+        "price": 3.5,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Size",
+                "mod1": {
+                    "name": "Single",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Double",
+                    "price": 0.45
+                }
+            }
+        }
+    },
+    {
+        "id": 58,
+        "name": "Latte/Cappuccino",
+        "price": 4.5,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Size",
+                "mod1": {
+                    "name": "Single",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Double",
+                    "price": 1
+                }
+            }
+        }
+    },
+    {
+        "id": 59,
+        "name": "Orange Juice",
+        "price": 4.5,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVAILABLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 60,
+        "name": "Pomegranate Juice",
+        "price": 7,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVAILABLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 61,
+        "name": "Sodas",
+        "price": 2.75,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVAILABLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 62,
+        "name": "San Pellegrino",
+        "price": 3.75,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Flavour",
+                "mod1": {
+                    "name": "Various",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 63,
+        "name": "Milkshakes",
+        "price": 7,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Flavor",
+                "mod1": {
+                    "name": "Vanilla",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Chocolate",
+                    "price": 0
+                },
+                "mod3": {
+                    "name": "Strawberry",
+                    "price": 0
+                }
+            }
+        }
+    },
+    {
+        "id": 64,
+        "name": "Chocolate Milk",
+        "price": 3.75,
+        "type": [
+            1,
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "nan",
+                "mod1": {
+                    "name": "NO MODS AVAILABLE",
+                    "price": null
+                }
+            }
+        }
+    },
+    {
+        "id": 65,
+        "name": "Shortrib Benny",
+        "price": 16,
+        "type": [
+            2,
+            3
+        ],
+        "mods": {
+            "first": {
+                "modClass": "Sauce",
+                "mod1": {
+                    "name": "Hollandaise ON SIDE",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "NO Hollandaise",
+                    "price": 0
+                }
+            },
+            "second": {
+                "modClass": "Egg",
+                "mod1": {
+                    "name": "Over Easy",
+                    "price": 0
+                },
+                "mod2": {
+                    "name": "Over Medium",
+                    "price": 0
+                },
+                "mod4": {
+                    "name": "Over Hard",
+                    "price": 0
+                },
+                "mod5": {
+                    "name": "Poached Soft",
+                    "price": 0
+                },
+                "mod6": {
+                    "name": "Poached Medium",
+                    "price": 0
+                },
+                "mod7": {
+                    "name": "Poached Hard",
+                    "price": 0
+                },
+                "mod8": {
+                    "name": "Scrambled",
+                    "price": 0
+                },
+                "mod9": {
+                    "name": "Scrambled Hard",
+                    "price": 0
+                },
+                "mod10": {
+                    "name": "Sunny Side Up",
+                    "price": 0
+                }
+            }
+        }
+    }
 ]
 
 function enableTypeDisableTable() {
